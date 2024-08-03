@@ -1,7 +1,7 @@
 # genmap
 Nounbase Semantic Map Generator [for SQL Server]
 
-> __Today, Nounbase supports only SQL Server.__ But we plan on changing that. Support for other relational databases is coming soon. Which databases should we target first? Let us know!
+> __Today, Nounbase supports only SQL Server.__ But we plan on changing that. Support for other relational databases is coming soon. Which databases should we target next? [Start a discusion and let us know!](https://github.com/nounbase/genmap/discussions)
 
 ## Semantic maps
 
