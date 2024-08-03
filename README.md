@@ -14,14 +14,20 @@ A semantic map is an enhanced representation of a database's schema, enriched wi
 
 ## Using `genmap`
 
-Run the following `docker` command from your terminal of choice. Replace environment variables with your own values.
+Begin by pulling the latest `genmap` image:
+
+```shell
+docker pull ghcr.io/nounbase/genmap:latest
+```
+
+Then, run the following `docker` command. Replace environment variables with your own values.
 
 ```shell
 docker run -it --rm \
   -e NOUNBASE_ENV_OPENAI_API_KEY='[your OpenAI API key]' \
   -e NOUNBASE_ENV_SOURCE_DB_CONNECTION_STRING='[your source SQL Server database's connection string]' \
   -e NOUNBASE_ENV_SCHEMA='[your source schema name]'
-  genmap
+  ghcr.io/nounbase/genmap:latest
 ```
 
 ### Example
@@ -31,5 +37,26 @@ docker run -it --rm \
   -e NOUNBASE_ENV_OPENAI_API_KEY='sk-###' \
   -e NOUNBASE_ENV_SOURCE_DB_CONNECTION_STRING='Server=not_a_real_server...' \
   -e NOUNBASE_ENV_SCHEMA='my_schema'
-  genmap
+  ghcr.io/nounbase/genmap:latest
+```
+
+### Example (save semantic map to `map.json`)
+
+```shell
+docker run -it --rm \
+  -e NOUNBASE_ENV_OPENAI_API_KEY='sk-###' \
+  -e NOUNBASE_ENV_SOURCE_DB_CONNECTION_STRING='Server=not_a_real_server...' \
+  -e NOUNBASE_ENV_SCHEMA='my_schema'
+  ghcr.io/nounbase/genmap:latest > map.json
+```
+
+### Example (with logging)
+
+```shell
+docker run -it --rm \
+  -e NOUNBASE_ENV_OPENAI_API_KEY='sk-###' \
+  -e NOUNBASE_ENV_SOURCE_DB_CONNECTION_STRING='Server=not_a_real_server...' \
+  -e NOUNBASE_ENV_SCHEMA='my_schema'
+  -e NOUNBASE_ENV_LOG=1
+  ghcr.io/nounbase/genmap:latest
 ```
