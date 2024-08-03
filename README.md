@@ -1,11 +1,11 @@
 # genmap
 Nounbase Semantic Map Generator [for SQL Server]
 
+> __Today, Nounbase supports only SQL Server.__ But we plan on changing that. Support for other relational databases is coming soon. Which databases should we target first? Let us know!
+
 ## Semantic maps
 
 A Nounbase semantic map is a structured representation of the relationships and meanings embedded within a relational database. It acts as a "pocket guide" for AI agents, translating the database's raw tables and fields into a comprehensive, context-rich framework that captures the essence of the domain it represents, including key entities like people, places, and things. By understanding not just the data but also the semantic connections between different elements, these maps enable AI agents to interact more intelligently and accurately with the database. This enhanced understanding allows for more precise query handling, better integration of unstructured data, and overall improved decision-making processes. For developers and data scientists, leveraging these semantic maps means their AI systems can perform more complex tasks with greater efficiency and relevance, ultimately leading to more insightful and actionable outputs.
-
-> __Today, Nounbase supports only SQL Server.__ But we plan on changing that. Support for other relational databases is coming soon. Which databases should we target first? Let us know!
 
 ## Prerequisites
 
