@@ -14,7 +14,7 @@ A semantic map is an enhanced representation of a database's schema, enriched wi
 
 ## Using `genmap`
 
-Begin by pulling the latest `genmap` image:
+Begin by [authenticating to the container registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry#authenticating-in-a-github-actions-workflow) and [pulling the latest `genmap` image](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry#pulling-container-images):
 
 ```shell
 docker pull ghcr.io/nounbase/genmap:latest
