@@ -22,11 +22,11 @@ docker pull ghcr.io/nounbase/genmap:latest
 
 Then, run the following `docker` command. Replace environment variables with your own values.
 
-```shell
+```sh
 docker run -it --rm \
-  -e NOUNBASE_ENV_OPENAI_API_KEY='[your OpenAI API key]' \
-  -e NOUNBASE_ENV_SOURCE_DB_CONNECTION_STRING='[your source SQL Server database's connection string]' \
-  -e NOUNBASE_ENV_SCHEMA='[your source schema name]'
+  -e NOUNBASE_ENV_OPENAI_API_KEY="[your OpenAI API key]" \
+  -e NOUNBASE_ENV_SOURCE_DB_CONNECTION_STRING="[your source SQL Server database's connection string]" \
+  -e NOUNBASE_ENV_SCHEMA="[your source schema name]"
   ghcr.io/nounbase/genmap:latest
 ```
 
@@ -34,9 +34,9 @@ docker run -it --rm \
 
 ```shell
 docker run -it --rm \
-  -e NOUNBASE_ENV_OPENAI_API_KEY='sk-###' \
-  -e NOUNBASE_ENV_SOURCE_DB_CONNECTION_STRING='Server=not_a_real_server...' \
-  -e NOUNBASE_ENV_SCHEMA='my_schema'
+  -e NOUNBASE_ENV_OPENAI_API_KEY="sk-###" \
+  -e NOUNBASE_ENV_SOURCE_DB_CONNECTION_STRING="Server=not_a_real_server..." \
+  -e NOUNBASE_ENV_SCHEMA="my_schema"
   ghcr.io/nounbase/genmap:latest
 ```
 
@@ -44,9 +44,9 @@ docker run -it --rm \
 
 ```shell
 docker run -it --rm \
-  -e NOUNBASE_ENV_OPENAI_API_KEY='sk-###' \
-  -e NOUNBASE_ENV_SOURCE_DB_CONNECTION_STRING='Server=not_a_real_server...' \
-  -e NOUNBASE_ENV_SCHEMA='my_schema'
+  -e NOUNBASE_ENV_OPENAI_API_KEY="sk-###" \
+  -e NOUNBASE_ENV_SOURCE_DB_CONNECTION_STRING="Server=not_a_real_server..." \
+  -e NOUNBASE_ENV_SCHEMA="my_schema"
   ghcr.io/nounbase/genmap:latest > map.json
 ```
 
@@ -54,9 +54,9 @@ docker run -it --rm \
 
 ```shell
 docker run -it --rm \
-  -e NOUNBASE_ENV_OPENAI_API_KEY='sk-###' \
-  -e NOUNBASE_ENV_SOURCE_DB_CONNECTION_STRING='Server=not_a_real_server...' \
-  -e NOUNBASE_ENV_SCHEMA='my_schema'
+  -e NOUNBASE_ENV_OPENAI_API_KEY="sk-###" \
+  -e NOUNBASE_ENV_SOURCE_DB_CONNECTION_STRING="Server=not_a_real_server..." \
+  -e NOUNBASE_ENV_SCHEMA="my_schema"
   -e NOUNBASE_ENV_LOG=1
   ghcr.io/nounbase/genmap:latest
 ```
