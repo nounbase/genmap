@@ -1,16 +1,16 @@
 # genmap
 Nounbase Semantic Map Generator [for SQL Server]
 
+## Semantic maps
+
+A semantic map is an enhanced representation of a database's schema, enriched with semantic annotations that detail the relationships, data types, and contextual roles within the database. This mapping provides a deeper understanding of how data elements are interconnected and their relevance in various operations, making it a valuable tool for anyone looking to improve the accuracy and relevance of database queries, especially in applications like natural language to SQL (NL2SQL) systems. Generating a semantic map can help ensure that SQL queries derived from natural language inputs are not only syntactically correct but also semantically aligned with the intended data manipulations. This leads to more effective data retrieval and management, minimizing errors and improving interaction with the database.
+
 ## Prerequisites
 
 - [Docker](https://docs.docker.com/engine/install/)
 - [An OpenAI API account](https://platform.openai.com/signup) and [an OpenAI API key](https://platform.openai.com/account/api-keys)
 - A source SQL Server database and its connection string
 - A source schema name (e.g., dbo)
-
-## Semantic maps
-
-A semantic map is an enhanced representation of a database's schema, enriched with semantic annotations that detail the relationships, data types, and contextual roles within the database. This mapping provides a deeper understanding of how data elements are interconnected and their relevance in various operations, making it a valuable tool for anyone looking to improve the accuracy and relevance of database queries, especially in applications like natural language to SQL (NL2SQL) systems. Generating a semantic map can help ensure that SQL queries derived from natural language inputs are not only syntactically correct but also semantically aligned with the intended data manipulations. This leads to more effective data retrieval and management, minimizing errors and improving interaction with the database.
 
 ## Using `genmap`
 
