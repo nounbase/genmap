@@ -26,39 +26,17 @@ Then, run the following `docker` command. Replace environment variables with you
 
 ```sh
 docker run -it --rm \
-  -e NOUNBASE_ENV_OPENAI_API_KEY="[your OpenAI API key]" \
-  -e NOUNBASE_ENV_SOURCE_DB_CONNECTION_STRING="[your source SQL Server database's connection string]" \
-  -e NOUNBASE_ENV_SCHEMA="[your source schema name]"
+  -e ENV_NAME="[env_value]" \
   ghcr.io/nounbase/genmap:latest
 ```
 
-### Example
+### Environment variables
 
-```shell
-docker run -it --rm \
-  -e NOUNBASE_ENV_OPENAI_API_KEY="sk-###" \
-  -e NOUNBASE_ENV_SOURCE_DB_CONNECTION_STRING="Server=not_a_real_server..." \
-  -e NOUNBASE_ENV_SCHEMA="my_schema"
-  ghcr.io/nounbase/genmap:latest
-```
+| Name | Required | Description |
+| --- | --- | --- |
+| `NOUNBASE_ENV_SOURCE_DB_CONNECTION_STRING` | 🔴 | Connection string needed to access the source SQL Server database |
+| `NOUNBASE_ENV_SOURCE_SCHEMA` | 🔴 | The source database schema that the semantic map will be based on |
+| `NOUNBASE_ENV_OPENAI_API_KEY` | 🔴 | Your OpenAI API key |
+| `NOUNBASE_ENV_LOG` | | Set this environment variable to any value for logging output |
+| `NOUNBASE_ENV_SOURCE_DB_THROTTLE` | | If provided, an integer (1+) indicating how many database operations can occur at the same time |
 
-### Example (save semantic map to `map.json`)
-
-```shell
-docker run -it --rm \
-  -e NOUNBASE_ENV_OPENAI_API_KEY="sk-###" \
-  -e NOUNBASE_ENV_SOURCE_DB_CONNECTION_STRING="Server=not_a_real_server..." \
-  -e NOUNBASE_ENV_SCHEMA="my_schema"
-  ghcr.io/nounbase/genmap:latest > map.json
-```
-
-### Example (with logging)
-
-```shell
-docker run -it --rm \
-  -e NOUNBASE_ENV_OPENAI_API_KEY="sk-###" \
-  -e NOUNBASE_ENV_SOURCE_DB_CONNECTION_STRING="Server=not_a_real_server..." \
-  -e NOUNBASE_ENV_SCHEMA="my_schema"
-  -e NOUNBASE_ENV_LOG=1
-  ghcr.io/nounbase/genmap:latest
-```
