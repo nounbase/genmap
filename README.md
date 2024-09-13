@@ -32,7 +32,7 @@ docker run -it --rm \
 
 ### Environment variables
 
-#### `NOUNBASE_ENV_SOURCE_DB_CONNECTION_STRING` 🔴
+`NOUNBASE_ENV_SOURCE_DB_CONNECTION_STRING` 🔴
 The read-only SQL Server connection string (including basic auth/password) needed to connect to the source database
 
 | Name | Required | Description |
