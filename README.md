@@ -26,7 +26,7 @@ Then, run the following `docker` command. Replace environment variables with you
 
 ```sh
 docker run -it --rm \
-  -e ENV_NAME="[env_value]" \
+  -e ENV_NAME="[env_value]" \ # Refer to the "environment variables" section below
   ghcr.io/nounbase/genmap:latest
 ```
 
