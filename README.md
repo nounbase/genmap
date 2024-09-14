@@ -37,7 +37,7 @@ docker run -it --rm \
 
 | Name | Description |
 | --- | --- |
-| `NOUNBASE_ENV_SOURCE_DB_CONNECTION_STRING` | 🔴 The read-only SQL Server connection string (including basic auth/password) needed to connect to the source database |
+| `NOUNBASE_ENV_SOURCE_DB_CONNECTION_STRING` | 🔴 The read-only SQL Server connection string (including basic auth/password) needed to query the source database |
 | `NOUNBASE_ENV_SOURCE_SCHEMA` | 🔴 The name of the source database schema that the generated semantic map will be based on |
 | `NOUNBASE_ENV_OPENAI_API_KEY` | 🔴 [Your OpenAI API key](https://platform.openai.com/account/api-keys) |
 | `NOUNBASE_ENV_LOG` | Set this to any value to enable detailed logging |
