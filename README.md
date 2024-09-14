@@ -32,7 +32,7 @@ docker run -it --rm \
 
 ### Environment variables
 
-> 🔴 Environmeent variable is required.
+> 🔴 Environment variable is required.
 
 
 | Name | Description |
