@@ -50,14 +50,6 @@ docker run -it --rm \
 | `NOUNBASE_ENV_NARRATION_MODEL_NAME` | By default, the name of [the OpenAI model](https://platform.openai.com/docs/models) that will be used during the **"narration phase"**. Default is `NOUNBASE_ENV_DEFAULT_MODEL_NAME`. |
 | `NOUNBASE_ENV_ENRICHMENT_MODEL_NAME` | By default, the name of [the OpenAI model](https://platform.openai.com/docs/models) that will be used during the **"enrichment phase"**. Default is `NOUNBASE_ENV_DEFAULT_MODEL_NAME`. |
 
-## Background
-
-The idea for Nounbase came during the rise of generative AI tools like ChatGPT, which opened up new possibilities for working with structured data. With most of the world’s data stored in relational databases, I initially set out to bridge the gap between AI and these data stores. My first attempt focused on solving natural language to SQL (NL2SQL) translation. However, I quickly realized that this approach demanded near-perfect accuracy—any misinterpretation could lead to significant errors.
-
-To sidestep these risks, I shifted my focus to exploring how AI could "tell the story" of data within a database. The concept was to take a single row, trace its relationships, and generate a detailed narrative. While generating these articles was technically impressive, I found that it added limited value—essentially just rephrasing the data into a longer story without truly deepening its meaning. It was more a cool demonstration than a practical solution.
-
-The real value became clear when I recognized the potential of the **semantic map** itself. By generating these maps, Nounbase could provide AI with rich context, allowing it to understand the entities and relationships within a database as if it were navigating a real-world domain. This shift in focus keeps Nounbase simple and effective: it’s all about creating semantic maps that turn structured data into something AI can truly comprehend, empowering applications to not just access data, but understand it deeply.
-
 ## How **genmap** works
 
 **genmap** constructs a layered **Understanding** of a relational database through a multi-phase process that transforms raw schema data into a **semantic map**. This map represents the database’s structure, relationships, and real-world context, making it accessible to AI applications. The following breakdown explains how genmap develops this comprehensive model through schema analysis, sampling, discovery, noun sampling, narration, and enrichment, capturing both technical details and real-world meaning.
@@ -121,3 +113,11 @@ This detailed metadata enables genmap to capture a nuanced and real-world repres
 - **Real-World Context for AI**: By transforming relational data into an accessible, business-oriented representation, the semantic map enables AI applications to interact with the data accurately and contextually, creating a meaningful connection between technical data storage and real-world insights.
 
 Through this structured process, genmap’s phases of schema analysis, sampling, discovery, noun sampling, narration, and enrichment work together to convert traditional relational models into a **rich, intelligent representation** of real-world data. This multi-phase pipeline enables genmap to bridge the gap between structured data storage and dynamic, business-oriented AI interactions.
+
+## Background
+
+The idea for Nounbase came during the rise of generative AI tools like ChatGPT, which opened up new possibilities for working with structured data. With most of the world’s data stored in relational databases, I initially set out to bridge the gap between AI and these data stores. My first attempt focused on solving natural language to SQL (NL2SQL) translation. However, I quickly realized that this approach demanded near-perfect accuracy—any misinterpretation could lead to significant errors.
+
+To sidestep these risks, I shifted my focus to exploring how AI could "tell the story" of data within a database. The concept was to take a single row, trace its relationships, and generate a detailed narrative. While generating these articles was technically impressive, I found that it added limited value—essentially just rephrasing the data into a longer story without truly deepening its meaning. It was more a cool demonstration than a practical solution.
+
+The real value became clear when I recognized the potential of the **semantic map** itself. By generating these maps, Nounbase could provide AI with rich context, allowing it to understand the entities and relationships within a database as if it were navigating a real-world domain. This shift in focus keeps Nounbase simple and effective: it’s all about creating semantic maps that turn structured data into something AI can truly comprehend, empowering applications to not just access data, but understand it deeply.
