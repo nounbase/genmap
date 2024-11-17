@@ -77,26 +77,26 @@ docker run -it --rm \
 
 ### Phase 4: Noun Sampling
 
-- **Graph-Based Sampling**: Building on the core noun definitions, [genmap performs **noun sampling** across the entire noun graph](https://github.com/nounbase/genmap/blob/main/src/Nounbase.Services.SqlServer/Samplers/SqlServerNounSampler.cs), capturing the full context defined in the discovery phase.
+- [**Graph-Based Sampling**:](https://github.com/nounbase/genmap/blob/main/src/Nounbase.Services.SqlServer/Samplers/SqlServerNounSampler.cs) Building on the core noun definitions, genmap performs **noun sampling** across the entire noun graph, capturing the full context defined in the discovery phase.
 - **Broader Context**: This expanded sampling captures insights into how data points within the noun graph are interrelated, helping genmap identify significant patterns, relationships, and groupings that reflect real-world dynamics.
 - **Insight into Key Groupings**: By exploring the complete noun structure, genmap can detect which properties are suitable for segmenting data into categories, supporting more advanced analyses. This phase helps define the dimensions and metrics essential for understanding and analyzing the core objectives of the domain.
 
 ### Phase 5: Narration
 
-- **Descriptive Narrative**: With a fully constructed noun model, [genmap generates a narrative](https://github.com/nounbase/genmap/blob/1df49bff60b33cf4205e41d608dab97c89d414b0/src/Nounbase.Services/Narrators/Narrator.cs#L33) for each noun, transforming the technical data structure into an intuitive, human-readable format.
-- **Structured Prompt**: genmap employs [a structured prompt](https://github.com/nounbase/genmap/blob/1df49bff60b33cf4205e41d608dab97c89d414b0/src/Nounbase.Services/Narrators/Narrator.cs#L145) that guides AI to produce clear, relatable descriptions, capturing each noun’s purpose and relationships in conversational language.
-- **Business Relevance**: The narration phase provides context on [how these entities interact and function in real-world scenarios](https://github.com/nounbase/genmap/blob/1df49bff60b33cf4205e41d608dab97c89d414b0/src/Nounbase.Services/Narrators/Narrator.cs#L84), adding business significance to the data model. This approach helps users—both technical and non-technical—understand the data’s practical value and operational dynamics.
+- [**Descriptive Narrative**:](https://github.com/nounbase/genmap/blob/1df49bff60b33cf4205e41d608dab97c89d414b0/src/Nounbase.Services/Narrators/Narrator.cs#L33) With a fully constructed noun model, genmap generates a narrative for each noun, transforming the technical data structure into an intuitive, human-readable format.
+- [**Structured Prompt**:](https://github.com/nounbase/genmap/blob/1df49bff60b33cf4205e41d608dab97c89d414b0/src/Nounbase.Services/Narrators/Narrator.cs#L145) genmap employs a structured prompt that guides AI to produce clear, relatable descriptions, capturing each noun’s purpose and relationships in conversational language.
+- [**Business Relevance**:](https://github.com/nounbase/genmap/blob/1df49bff60b33cf4205e41d608dab97c89d414b0/src/Nounbase.Services/Narrators/Narrator.cs#L84) The narration phase provides context on how these entities interact and function in real-world scenarios, adding business significance to the data model. This approach helps users—both technical and non-technical—understand the data’s practical value and operational dynamics.
 
 ### Phase 6: Enrichment
 
 The enrichment phase adds **semantic metadata** to each noun and property, enhancing the depth and usability of the noun model by refining genmap’s Understanding:
 
-- **Groupable Properties**: genmap identifies **groupable properties** that allow for meaningful data segmentation, such as `[region, country]` or `[age_group, gender]`. This supports actionable insights by enabling users to view and analyze data through high-level groupings.
-- **Real-World Naming and Classification**:
+- [**Groupable Properties**:](https://github.com/nounbase/genmap/blob/22c039bddce05d28cbc2091c2000aa40106a5751/src/Nounbase.Services/Enrichers/NounEnricher.cs#L193) genmap identifies **groupable properties** that allow for meaningful data segmentation, such as `[region, country]` or `[age_group, gender]`. This supports actionable insights by enabling users to view and analyze data through high-level groupings.
+- [**Real-World Naming and Classification**:](https://github.com/nounbase/genmap/blob/22c039bddce05d28cbc2091c2000aa40106a5751/src/Nounbase.Services/Enrichers/NounEnricher.cs#L348)
   - genmap assigns relatable names to each noun, making them easier to understand and use.
   - Each noun is classified as a person, place, or thing, allowing AI applications to determine its role within the model.
   - For event-based data, genmap detects chronological properties, helping the model incorporate time-based analysis and trend tracking.
-- **Detailed Property Metadata**: For each property, genmap gathers comprehensive metadata, enhancing the model’s usability:
+- [**Detailed Property Metadata**:](https://github.com/nounbase/genmap/blob/22c039bddce05d28cbc2091c2000aa40106a5751/src/Nounbase.Services/Enrichers/NounEnricher.cs#L274) For each property, genmap gathers comprehensive metadata, enhancing the model’s usability:
   - **Description and Real-World Title**: Assigns intuitive names and descriptions, improving interpretability for non-technical users.
   - **Calculability**: Flags properties suitable for calculations, such as quantities or monetary values, supporting complex analyses.
   - **Uniqueness**: Identifies unique properties (e.g., IDs) that differentiate individual records, aiding in accurate entity resolution.
