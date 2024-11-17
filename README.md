@@ -77,15 +77,15 @@ docker run -it --rm \
 
 ### Phase 4: Noun Sampling
 
-- **Graph-Based Sampling**: Building on the core noun definitions, genmap performs **noun sampling** across the entire noun graph, capturing the full context defined in the discovery phase.
+- **Graph-Based Sampling**: Building on the core noun definitions, [genmap performs **noun sampling** across the entire noun graph](https://github.com/nounbase/genmap/blob/main/src/Nounbase.Services.SqlServer/Samplers/SqlServerNounSampler.cs), capturing the full context defined in the discovery phase.
 - **Broader Context**: This expanded sampling captures insights into how data points within the noun graph are interrelated, helping genmap identify significant patterns, relationships, and groupings that reflect real-world dynamics.
 - **Insight into Key Groupings**: By exploring the complete noun structure, genmap can detect which properties are suitable for segmenting data into categories, supporting more advanced analyses. This phase helps define the dimensions and metrics essential for understanding and analyzing the core objectives of the domain.
 
 ### Phase 5: Narration
 
-- **Descriptive Narrative**: With a fully constructed noun model, genmap generates a narrative for each noun, transforming the technical data structure into an intuitive, human-readable format.
-- **Structured Prompt**: genmap employs a structured prompt that guides AI to produce clear, relatable descriptions, capturing each noun’s purpose and relationships in conversational language.
-- **Business Relevance**: The narration phase provides context on how these entities interact and function in real-world scenarios, adding business significance to the data model. This approach helps users—both technical and non-technical—understand the data’s practical value and operational dynamics.
+- **Descriptive Narrative**: With a fully constructed noun model, [genmap generates a narrative](https://github.com/nounbase/genmap/blob/1df49bff60b33cf4205e41d608dab97c89d414b0/src/Nounbase.Services/Narrators/Narrator.cs#L33) for each noun, transforming the technical data structure into an intuitive, human-readable format.
+- **Structured Prompt**: genmap employs [a structured prompt](https://github.com/nounbase/genmap/blob/1df49bff60b33cf4205e41d608dab97c89d414b0/src/Nounbase.Services/Narrators/Narrator.cs#L145) that guides AI to produce clear, relatable descriptions, capturing each noun’s purpose and relationships in conversational language.
+- **Business Relevance**: The narration phase provides context on [how these entities interact and function in real-world scenarios](https://github.com/nounbase/genmap/blob/1df49bff60b33cf4205e41d608dab97c89d414b0/src/Nounbase.Services/Narrators/Narrator.cs#L84), adding business significance to the data model. This approach helps users—both technical and non-technical—understand the data’s practical value and operational dynamics.
 
 ### Phase 6: Enrichment
 
