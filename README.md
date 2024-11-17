@@ -52,7 +52,9 @@ docker run -it --rm \
 
 ## How **genmap** works
 
-**genmap** constructs a layered **Understanding** of a relational database through a multi-phase process that transforms raw schema data into a **semantic map**. This map represents the database’s structure, relationships, and real-world context, making it accessible to AI applications. The following breakdown explains how genmap develops this comprehensive model through schema analysis, sampling, discovery, noun sampling, narration, and enrichment, capturing both technical details and real-world meaning.
+> Code links are permalinks and may refer to previous commits.
+
+**genmap** [constructs](https://github.com/nounbase/genmap/blob/e6ccc7f2c80e1e0a2c5cb765b6ca37ac867ee915/src/Nounbase.Console.GenMap/MapFactory.cs#L47) a layered [**Understanding**](https://github.com/nounbase/genmap/blob/36a73ccc08a441541ba67ec529f5d9165e8b9a09/src/Nounbase.Core/Models/Understanding.cs#L1) of a relational database through a multi-phase process that transforms raw schema data into a **semantic map**. This map represents the database’s structure, relationships, and real-world context, making it accessible to AI applications. The following breakdown explains how genmap develops this comprehensive model through schema analysis, sampling, discovery, noun sampling, narration, and enrichment, capturing both technical details and real-world meaning.
 
 ### Phase 1: Schema Analysis
 
