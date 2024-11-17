@@ -46,7 +46,7 @@ docker run -it --rm \
 | `NOUNBASE_ENV_SOURCE_DB_THROTTLE` | If provided, an integer (greater than `0`) indicating how many database queries can occur at the same time. Default is `20` database queries. |
 | `NOUNBASE_ENV_OPENAI_THROTTLE` | If provided, an integer (greater than `0`) indicating how many OpenAI API operations can occur at the same time. Default is `20` API operations. |
 | `NOUNBASE_ENV_DEFAULT_MODEL_NAME` | By default, the name of [the OpenAI model](https://platform.openai.com/docs/models) that will be used to generate the semantic map. Default is [`gpt-4o`](https://platform.openai.com/docs/models/gpt-4o). |
-| `NOUNBASE_ENV_DISCOVERY_MODEL_NAME` | By default, the name of [the OpenAI model](https://platform.openai.com/docs/models) that will be used during the **"noun discovery phase"**. Default is `NOUNBASE_ENV_DEFAULT_MODEL_NAME`. |
+| `NOUNBASE_ENV_DISCOVERY_MODEL_NAME` | By default, the name of [the OpenAI model](https://platform.openai.com/docs/models) that will be used during the [**noun discovery phase**](#phase-3-discovery). Default is `NOUNBASE_ENV_DEFAULT_MODEL_NAME`. |
 | `NOUNBASE_ENV_NARRATION_MODEL_NAME` | By default, the name of [the OpenAI model](https://platform.openai.com/docs/models) that will be used during the **"narration phase"**. Default is `NOUNBASE_ENV_DEFAULT_MODEL_NAME`. |
 | `NOUNBASE_ENV_ENRICHMENT_MODEL_NAME` | By default, the name of [the OpenAI model](https://platform.openai.com/docs/models) that will be used during the **"enrichment phase"**. Default is `NOUNBASE_ENV_DEFAULT_MODEL_NAME`. |
 
