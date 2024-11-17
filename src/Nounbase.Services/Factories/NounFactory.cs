@@ -13,7 +13,7 @@ using System.Text.Json;
 namespace Nounbase.Services.Factories
 {
     public class NounFactory : INounFactory
-    { 
+    {
         private readonly IChatGptClient chatGptClient;
         private readonly ILogger log;
         private readonly IModelConfiguration modelConfig;
@@ -58,6 +58,9 @@ namespace Nounbase.Services.Factories
               DO NOT INCLUDE ID, APP-SPECIFIC, OR ANY COLUMN WHICH DOESN'T MEANINGFULLY DESCRIBE THE SAMPLE DATA.
               DO INCLUDE COLUMNS THAT WOULD BE GOOD FOR ANALYSIS AND SEGMENTATION.
 
+              SPEAK IN 3RD PERSON. GENERATE TEXTBOOK-QUALITY CONTENT.
+              YOUR RESPONSE WILL INFORM LATER GPT PROMPTS SO EXPLAIN THINGS IN TERMS OF THE DOMAIN.
+
               Based on the TSV sample from the [{{table.Name}}] table below and table/column names, which columns contain
               information that ALONE OR THROUGH ANALYSIS would likely be included in everyday verbal conversation about the real-world 
               people, places, and things that the sample data describes?
@@ -79,6 +82,14 @@ namespace Nounbase.Services.Factories
                 $"The information below describes the [{table.Name}] table and its related dimension tables. " +
                 "Based only in the below, create descriptive, meaningful, and short SQL join aliases for each dimension table formatted \"like_this\". " +
                 "Alias names can not be existing column names");
+
+            builder.AppendLine(
+                """
+
+                SPEAK IN 3RD PERSON. GENERATE TEXTBOOK-QUALITY CONTENT.
+                YOUR RESPONSE WILL INFORM LATER GPT PROMPTS SO EXPLAIN THINGS IN TERMS OF THE DOMAIN.
+
+                """);
 
             builder.AppendLine();
             builder.AppendLine("- RETURN ONLY A JSON OBJECT.");
@@ -131,7 +142,7 @@ namespace Nounbase.Services.Factories
         {
             var prompt = BuildConversationalPropertiesPrompt(table, understanding);
 
-            var completion = 
+            var completion =
                 (await chatGptClient.Complete(prompt, modelConfig.DiscoveryModelName))
                 .RemoveJsonLabels()!;
 
@@ -185,7 +196,7 @@ namespace Nounbase.Services.Factories
                 {
                     var prompt = BuildDimensionsPrompt(table, understanding);
 
-                    var completion = 
+                    var completion =
                         (await chatGptClient.Complete(prompt, modelConfig.DiscoveryModelName))
                         .RemoveJsonLabels()!;
 
@@ -217,7 +228,7 @@ namespace Nounbase.Services.Factories
                             Alias = alias,
                             ForeignKeyName = dimensionFk.Name,
                             NounName = dimensionFk.PrimaryKeyRef!.TableName,
-                            Lineage = [ alias ]
+                            Lineage = [alias]
                         });
                     }
                 }

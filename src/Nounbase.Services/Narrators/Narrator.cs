@@ -83,6 +83,9 @@ namespace Nounbase.Services.Narrators
         {
             var builder = new StringBuilder(
                 """
+                SPEAK IN 3RD PERSON. GENERATE TEXTBOOK-QUALITY CONTENT.
+                YOUR RESPONSE WILL INFORM LATER GPT PROMPTS SO EXPLAIN THINGS IN TERMS OF THE DOMAIN.
+
                 ROLE:
 
                 You role is to describe the REAL-WORLD DOMAIN represented by the following 
@@ -144,6 +147,11 @@ namespace Nounbase.Services.Narrators
         {
             var builder = new StringBuilder(
                 $$"""
+                  SPEAK IN 3RD PERSON. GENERATE TEXTBOOK-QUALITY CONTENT.
+                  YOUR RESPONSE WILL INFORM LATER GPT PROMPTS SO EXPLAIN THINGS IN TERMS OF THE DOMAIN.
+
+                  RETURN ONLY A VALID JSON OBJECT AND NO ADDITIONAL CONTENT.
+
                   ROLE:
 
                   YOU'RE PART OF THE DOMAIN DESCRIBED BY THE MODEL AND SAMPLE SOURCE DATA BELOW.

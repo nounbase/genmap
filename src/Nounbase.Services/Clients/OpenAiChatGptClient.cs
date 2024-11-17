@@ -1,6 +1,7 @@
 ﻿using Azure;
 using Azure.AI.OpenAI;
 using Microsoft.Extensions.Logging;
+using Nounbase.Core.Extensions;
 using Nounbase.Core.Interfaces.Clients;
 using Nounbase.Core.Interfaces.Configuration;
 using Nounbase.Services.Constants;
@@ -169,7 +170,7 @@ namespace Nounbase.Services.Clients
 
                 if (string.IsNullOrEmpty(completion))
                 {
-                    log.LogWarning($"No completion returned from model [{modelName}]. Prompt may need to be revised.");
+                    log.LogWarning($"No completion returned from mod`el [{modelName}]. Prompt may need to be revised.");
                 }
                 else
                 {
@@ -178,7 +179,7 @@ namespace Nounbase.Services.Clients
                          "from OpenAI chat completions API.");
                 }
 
-                return JsonSerializer.Deserialize<T?>(completion);
+                return JsonSerializer.Deserialize<T?>(completion.RemoveJsonLabels()!);
             }
             catch (Exception ex)
             {
