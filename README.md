@@ -3,7 +3,7 @@ Nounbase Semantic Map Generator [for SQL Server]
 
 > __Today, Nounbase supports only SQL Server.__ But we plan on changing that. Support for other relational databases is coming soon. Which databases should we target next? [Start a discusion and let us know!](https://github.com/nounbase/genmap/discussions)
 
-> Check out [this example semantic map](src/maps/adventureworkslt.json) based on [Microsoft's popular AdventureWorks LT sample database](https://learn.microsoft.com/sql/samples/adventureworks-install-configure?view=sql-server-ver16&tabs=ssms).
+> Check out [this example semantic map](/maps/adventureworkslt.json) based on [Microsoft's popular AdventureWorks LT sample database](https://learn.microsoft.com/sql/samples/adventureworks-install-configure?view=sql-server-ver16&tabs=ssms).
 
 ## Semantic maps
 
