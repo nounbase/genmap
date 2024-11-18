@@ -16,7 +16,7 @@ A Nounbase semantic map is a structured representation of the relationships and 
 - [Docker](https://docs.docker.com/engine/install/)
 - [An OpenAI API account](https://platform.openai.com/signup) and [an OpenAI API key](https://platform.openai.com/account/api-keys)
 - A source SQL Server database and its connection string
-  - __The database must have explicitly-declared foreign keys.__ Future iterations of genmap will be able to automatically detect implicit foreign key relationships. 
+  - __The database must have explicitly-declared foreign keys.__ Future iterations of genmap will detect implicit foreign key relationships.
 - A source schema name (e.g., dbo)
 
 ### Using `genmap`
