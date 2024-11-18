@@ -3,6 +3,8 @@ Nounbase Semantic Map Generator [for SQL Server]
 
 > __Today, Nounbase supports only SQL Server.__ But we plan on changing that. Support for other relational databases is coming soon. Which databases should we target next? [Start a discusion and let us know!](https://github.com/nounbase/genmap/discussions)
 
+> Check out [this example semantic map](maps/adventureworkslt.json) based on [Microsoft's popular AdventureWorks LT sample database](https://learn.microsoft.com/sql/samples/adventureworks-install-configure?view=sql-server-ver16&tabs=ssms).
+
 ## Semantic maps
 
 A Nounbase semantic map is a structured representation of the relationships and meanings embedded within a relational database. It acts as a "pocket guide" for AI agents, translating the database's raw tables and fields into a comprehensive, context-rich framework that captures the essence of the domain it represents, including key entities like people, places, and things. By understanding not just the data but also the semantic connections between different elements, these maps enable AI agents to interact more intelligently and accurately with the database. This enhanced understanding allows for more precise query handling, better integration of unstructured data, and overall improved decision-making processes. For developers and data scientists, leveraging these semantic maps means their AI systems can perform more complex tasks with greater efficiency and relevance, ultimately leading to more insightful and actionable outputs.
@@ -52,7 +54,7 @@ docker run -it --rm \
 
 ## How **genmap** works
 
-**genmap** constructs a layered [**Understanding**](https://github.com/nounbase/genmap/blob/main/src/Nounbase.Core/Models/Understanding.cs)) of a relational database through [a multi-phase process that transforms raw schema data into a **semantic map**](https://github.com/nounbase/genmap/blob/main/src/Nounbase.Console.GenMap/MapFactory.cs). This map represents the database’s structure, relationships, and real-world context, making it accessible to AI applications. The following breakdown explains how genmap develops this comprehensive model through schema analysis, sampling, discovery, noun sampling, narration, and enrichment, capturing both technical details and real-world meaning.
+**genmap** constructs a layered [**Understanding**](https://github.com/nounbase/genmap/blob/main/src/Nounbase.Core/Models/Understanding.cs) of a relational database through [a multi-phase process that transforms raw schema data into a **semantic map**](https://github.com/nounbase/genmap/blob/main/src/Nounbase.Console.GenMap/MapFactory.cs). This map represents the database’s structure, relationships, and real-world context, making it accessible to AI applications. The following breakdown explains how genmap develops this comprehensive model through schema analysis, sampling, discovery, noun sampling, narration, and enrichment, capturing both technical details and real-world meaning.
 
 ### Phase 1: Schema Analysis
 
@@ -63,7 +65,7 @@ docker run -it --rm \
 
 ### Phase 2: Sampling
 
-- **Data Samples**: In the sampling phase, [genmap gathers **randomized samples** from each table](https://github.com/nounbase/genmap/blob/77945db33efba6386b7813dbdb5ed81493cfc3b4/src/Nounbase.Services.SqlServer/Samplers/SqlServerTableSampler.cs#L26), observing typical values within columns without processing the entire dataset. Sampling offers a representative snapshot of the data, which genmap uses to build an initial sense of context.
+- **Data Samples**: In the sampling phase, [genmap gathers **randomized samples** from each table](https://github.com/nounbase/genmap/blob/main/src/Samplers/SqlServerTableSampler.cs), observing typical values within columns without processing the entire dataset. Sampling offers a representative snapshot of the data, which genmap uses to build an initial sense of context.
 - **Contextual Insights**: Through these data samples, genmap can start to interpret fields that may have ambiguous or unclear names. For example, a column labeled “loc” might be identified as a location field based on sampled values, even if the name itself isn’t informative.
 - **Foundation for Real-World Understanding**: Sampling serves as an anchor for later phases by providing an initial glimpse into the actual data’s characteristics and structure. This foundational understanding allows genmap to detect nuances that may not be evident from schema analysis alone, paving the way for richer interpretations in subsequent phases.
 
