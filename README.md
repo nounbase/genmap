@@ -66,7 +66,7 @@ docker run -it --rm \
 
 ### Phase 2: Sampling
 
-- **Data Samples**: In the sampling phase, [genmap gathers **randomized samples** from each table](https://github.com/nounbase/genmap/blob/main/src/Samplers/SqlServerTableSampler.cs), observing typical values within columns without processing the entire dataset. Sampling offers a representative snapshot of the data, which genmap uses to build an initial sense of context.
+- **Data Samples**: In the sampling phase, [genmap gathers **randomized samples** from each table](https://github.com/nounbase/genmap/blob/main/src/Nounbase.Services.SqlServer/Samplers/SqlServerTableSampler.cs), observing typical values within columns without processing the entire dataset. Sampling offers a representative snapshot of the data, which genmap uses to build an initial sense of context.
 - **Contextual Insights**: Through these data samples, genmap can start to interpret fields that may have ambiguous or unclear names. For example, a column labeled “loc” might be identified as a location field based on sampled values, even if the name itself isn’t informative.
 - **Foundation for Real-World Understanding**: Sampling serves as an anchor for later phases by providing an initial glimpse into the actual data’s characteristics and structure. This foundational understanding allows genmap to detect nuances that may not be evident from schema analysis alone, paving the way for richer interpretations in subsequent phases.
 
